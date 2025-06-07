@@ -1,66 +1,49 @@
+# 📨 Detektor Pesan Spam dengan Streamlit
 
-# 📧 Aplikasi Deteksi Pesan Spam dengan Streamlit
-
-Aplikasi ini merupakan implementasi sederhana untuk mendeteksi pesan spam menggunakan algoritma **Naive Bayes**. Dibangun menggunakan **Streamlit**, aplikasi ini memungkinkan pengguna mengetikkan pesan teks dan mendapatkan hasil klasifikasi secara langsung (spam atau ham).
-
----
-
-## 🚀 Fitur
-
-- Input pesan teks langsung dari browser.
-- Deteksi otomatis apakah pesan termasuk **spam** atau **bukan spam (ham)**.
-- Model dan vectorizer dilatih menggunakan dataset **SMSSpamCollection**.
-- Tampilan antarmuka web interaktif menggunakan **Streamlit**.
+Aplikasi web interaktif untuk mendeteksi apakah sebuah pesan merupakan **spam** atau **bukan (ham)** menggunakan model machine learning yang sudah dilatih sebelumnya. Dibuat dengan 🔥 menggunakan **Streamlit**, **scikit-learn**, dan **pandas**.
 
 ---
 
-## 🛠 Teknologi yang Digunakan
+## 🚀 Fitur Unggulan
 
-- Python
-- scikit-learn
-- pandas
-- Streamlit
+* 🔍 **Deteksi Pesan Individu**
 
----
+  * Ketik pesan langsung dan deteksi secara instan.
+  * Tampilkan skor probabilitas untuk spam dan ham.
+  * Riwayat deteksi otomatis tersimpan dan bisa diunduh.
+  * Visualisasi hasil deteksi dalam bentuk grafik batang.
 
-## 📁 Struktur Folder
+* 📂 **Deteksi Massal (CSV)**
 
-```
+  * Unggah file `.csv` berisi daftar pesan (header kolom: `pesan`).
+  * Lakukan deteksi secara massal dan simpan hasilnya.
 
-.
-├── train.py              # Melatih model dan menyimpan file model.pkl dan vectorizer.pkl
-├── spam.py               # Aplikasi Streamlit untuk deployment
-├── SMSSpamCollection     # Dataset asli (format .tsv tanpa ekstensi)
-├── model.pkl             # Model yang sudah dilatih (hasil dari train.py)
-├── vectorizer.pkl        # Vectorizer yang sudah dilatih
-└── requirements.txt      # Daftar pustaka yang dibutuhkan
+* ⚙️ **Pengaturan Lanjutan**
 
-````
+  * Atur ambang batas (threshold) klasifikasi spam sesuai kebutuhan.
 
 ---
 
-## 📦 Cara Menjalankan Lokal
+## 🛠️ Instalasi
 
-1. **Clone repository ini:**
+1. **Klon repositori ini**
 
 ```bash
-git clone https://github.com/Buluzaku12/spam-detector-streamlit.git
+git clone https://github.com/username-kamu/spam-detector-streamlit.git
 cd spam-detector-streamlit
-````
+```
 
-2. **Install dependensi:**
+2. **Instal dependensi**
 
 ```bash
 pip install -r requirements.txt
 ```
 
-3. **Latih model (jika belum ada file .pkl):**
+3. **Pastikan file model tersedia**
 
-```bash
-python train.py
-```
+* Letakkan `model.pkl` dan `vectorizer.pkl` di direktori utama.
 
-4. **Jalankan aplikasi Streamlit:**
+4. **Jalankan aplikasi**
 
 ```bash
 streamlit run spam.py
@@ -68,28 +51,44 @@ streamlit run spam.py
 
 ---
 
-## 🌐 Deployment Online
+## 📁 Struktur Folder
 
-Aplikasi ini dapat diakses secara publik melalui Streamlit Cloud.
-🔗 [Klik di sini untuk melihat aplikasi yang sudah dideploy](https://spam-detector-app-x6cnc4w42x6pyauer9tdxv.streamlit.app/)
-
-
-
----
-
-## 📚 Dataset
-
-* Dataset: [SMS Spam Collection](https://archive.ics.uci.edu/ml/datasets/SMS+Spam+Collection)
-* Sumber: UCI Machine Learning Repository
-* Format: tab-separated (.tsv)
+```
+spam-detector-streamlit/
+├── model.pkl
+├── vectorizer.pkl
+├── spam.py
+├── requirements.txt
+└── README.md
+```
 
 ---
 
-## 🙋‍♂️ Kontributor
+## 🤖 Informasi Model
 
-* Nama: **ADVENT CLEMENT ZENDRATO**
-* Institusi: Universitas Nusa Putra
-* Mata Kuliah: Machine Learning
-* Dosen: GINA PURNAMA INSANY, S.ST., M.Kom
+* Model dikembangkan menggunakan algoritma dari `scikit-learn`.
+* Cocok menggunakan Logistic Regression, Naive Bayes, atau Random Forest.
+* Jangan lupa menyimpan `vectorizer` juga (contoh: TfidfVectorizer).
 
 ---
+
+## 🌟 Fitur Mendatang
+
+* Ekspor hasil ke PDF
+* Notifikasi email otomatis
+* Mode gelap (dark mode)
+* Kemampuan retraining model secara langsung di aplikasi
+
+---
+
+## 🙌 Kredit
+
+Dibuat oleh **Ranggis** ✨
+
+> "Jangan biarkan pesan spam mengganggumu. Biarkan model yang menilai."
+
+---
+
+## 📄 Lisensi
+
+Proyek ini menggunakan lisensi **MIT**. Silakan modifikasi dan bagikan sesuai kebutuhan!
