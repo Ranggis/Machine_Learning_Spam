@@ -54,12 +54,13 @@ streamlit run spam.py
 ## 📁 Struktur Folder
 
 ```
-spam-detector-streamlit/
-├── model.pkl
-├── vectorizer.pkl
-├── spam.py
-├── requirements.txt
-└── README.md
+.
+├── train.py              # Melatih model dan menyimpan file model.pkl dan vectorizer.pkl
+├── spam.py               # Aplikasi Streamlit untuk deployment
+├── SMSSpamCollection     # Dataset asli (format .tsv tanpa ekstensi)
+├── model.pkl             # Model yang sudah dilatih (hasil dari train.py)
+├── vectorizer.pkl        # Vectorizer yang sudah dilatih
+└── requirements.txt      # Daftar pustaka yang dibutuhkan
 ```
 
 ---
